@@ -1,0 +1,58 @@
+<Window x:Class="Diplom_1.Views.CompareSelectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Выбор документов для сравнения" Height="380" Width="500"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize"
+        Background="#F3F3F3" FontFamily="Segoe UI">
+    <Window.Resources>
+        <Style TargetType="TextBlock" x:Key="FieldLabel">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#202020"/>
+            <Setter Property="Margin" Value="0,0,0,4"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Margin" Value="0,0,0,16"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Выберите два проанализированных документа:" FontSize="14" FontWeight="SemiBold"
+                   Foreground="#202020" Margin="0,0,0,16"/>
+
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Документ 1" Style="{StaticResource FieldLabel}"/>
+            <ComboBox x:Name="Doc1Combo" DisplayMemberPath="FileName" SelectedIndex="0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="Документ 2" Style="{StaticResource FieldLabel}"/>
+            <ComboBox x:Name="Doc2Combo" DisplayMemberPath="FileName" SelectedIndex="0"/>
+        </StackPanel>
+
+        <Border Grid.Row="3" Background="#FFF8E1" CornerRadius="6" Padding="12" Margin="0,0,0,12"
+                BorderBrush="#FFE082" BorderThickness="1">
+            <TextBlock Text="Будут сравниваться финансовые показатели двух документов. Для сравнения требуются проанализированные документы." FontSize="11" Foreground="#795548" TextWrapping="Wrap"/>
+        </Border>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="OkButton" Content="Сравнить" Width="120" Height="36" Margin="0,0,10,0"
+                    IsEnabled="False"
+                    Background="#0078D4" Foreground="White" FontSize="13" FontWeight="SemiBold"
+                    BorderThickness="0" Cursor="Hand" Click="OnOkClick"/>
+            <Button x:Name="CancelButton" Content="Отмена" Width="100" Height="36"
+                    Background="White" Foreground="#202020" FontSize="13"
+                    BorderBrush="#E0E0E0" BorderThickness="1" Cursor="Hand"
+                    Click="OnCancelClick"/>
+        </StackPanel>
+    </Grid>
+</Window>

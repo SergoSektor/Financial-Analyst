@@ -1,0 +1,141 @@
+<Window x:Class="Diplom_1.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Настройки" Height="450" Width="520"
+        WindowStartupLocation="CenterOwner"
+        Background="{StaticResource BackgroundColor}"
+        ResizeMode="NoResize" ShowInTaskbar="False">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+
+        <Style x:Key="SettingsGroupStyle" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource CardBackground}"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Padding" Value="16"/>
+            <Setter Property="Margin" Value="0,0,0,12"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#000000" Opacity="0.04" BlurRadius="8" ShadowDepth="1"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="LabelStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{StaticResource TextPrimary}"/>
+            <Setter Property="Margin" Value="0,0,0,6"/>
+        </Style>
+
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Настройки AI" FontSize="18" FontWeight="SemiBold" Foreground="{StaticResource TextPrimary}" Margin="0,0,0,16"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <Border Style="{StaticResource SettingsGroupStyle}">
+                    <StackPanel>
+                        <TextBlock Text="Режим AI" Style="{StaticResource LabelStyle}"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,4,0,8">
+                            <RadioButton Content="Ollama" GroupName="AiMode"
+                                         IsChecked="{Binding IsOllamaMode}" Margin="0,0,16,0"/>
+                            <RadioButton Content="API (удалённый)" GroupName="AiMode"
+                                         IsChecked="{Binding IsApiMode}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border>
+                    <Border.Style>
+                        <Style TargetType="Border" BasedOn="{StaticResource SettingsGroupStyle}">
+                            <Setter Property="Visibility" Value="Visible"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsOllamaMode}" Value="False">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <StackPanel>
+                        <TextBlock Text="Ollama" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock Text="URL сервера" Style="{StaticResource LabelStyle}" Margin="0,8,0,4"/>
+                        <TextBox Text="{Binding OllamaUrl}" Style="{StaticResource TextBoxStyle}"/>
+                        <TextBlock Text="Модель" Style="{StaticResource LabelStyle}" Margin="0,8,0,4"/>
+                        <TextBox Text="{Binding OllamaModel}" Style="{StaticResource TextBoxStyle}"/>
+                    </StackPanel>
+                </Border>
+
+                <Border>
+                    <Border.Style>
+                        <Style TargetType="Border" BasedOn="{StaticResource SettingsGroupStyle}">
+                            <Setter Property="Visibility" Value="Visible"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsApiMode}" Value="False">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <StackPanel>
+                        <TextBlock Text="API" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock Text="Адрес API" Style="{StaticResource LabelStyle}" Margin="0,8,0,4"/>
+                        <TextBox Text="{Binding ApiUrl}" Style="{StaticResource TextBoxStyle}"/>
+                        <TextBlock Text="Ключ API" Style="{StaticResource LabelStyle}" Margin="0,8,0,4"/>
+                        <TextBox Text="{Binding ApiKey}" Style="{StaticResource TextBoxStyle}"/>
+                        <TextBlock Text="Модель" Style="{StaticResource LabelStyle}" Margin="0,8,0,4"/>
+                        <TextBox Text="{Binding ApiModel}" Style="{StaticResource TextBoxStyle}"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Style="{StaticResource SettingsGroupStyle}">
+                    <StackPanel>
+                        <CheckBox Content="Режим отладки" IsChecked="{Binding IsDebugMode}" Margin="0,0,0,6">
+                            <CheckBox.ContentTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="Режим отладки" FontSize="13" FontWeight="SemiBold"
+                                               Foreground="{StaticResource TextPrimary}"/>
+                                </DataTemplate>
+                            </CheckBox.ContentTemplate>
+                        </CheckBox>
+                        <TextBlock Text="Отображает журнал отладки с логами AI при анализе"
+                                   FontSize="11" Foreground="{StaticResource TextSecondary}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Style="{StaticResource SettingsGroupStyle}">
+                    <StackPanel>
+                        <TextBlock Text="{Binding ConnectionStatus}" FontSize="13" Foreground="{StaticResource TextSecondary}" Margin="0,0,0,8"/>
+                        <Button Command="{Binding TestConnectionCommand}" Content="Проверить подключение"
+                                Style="{StaticResource ToolbarButtonStyle}" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+            <Button Command="{Binding CancelCommand}" Content="Отмена" Style="{StaticResource ToolbarButtonStyle}" Margin="0,0,8,0"/>
+            <Button Command="{Binding SaveCommand}" Content="Сохранить" Style="{StaticResource ToolbarButtonStyle}"/>
+        </StackPanel>
+    </Grid>
+</Window>
