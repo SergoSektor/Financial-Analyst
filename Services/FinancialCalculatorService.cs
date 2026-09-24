@@ -1,6 +1,6 @@
-using Diplom_1.Models;
+using FinancialAnalyst.Models;
 
-namespace Diplom_1.Services
+namespace FinancialAnalyst.Services
 {
     public class FinancialCalculatorService
     {

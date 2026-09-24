@@ -1,8 +1,8 @@
 using System.Windows;
 using System.Windows.Controls;
-using Diplom_1.Models;
+using FinancialAnalyst.Models;
 
-namespace Diplom_1.Views
+namespace FinancialAnalyst.Views
 {
     public partial class CompareSelectionWindow : Window
     {

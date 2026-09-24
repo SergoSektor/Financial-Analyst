@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Diplom_1.Models
+namespace FinancialAnalyst.Models
 {
     public class FinancialData
     {

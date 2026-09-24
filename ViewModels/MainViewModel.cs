@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
-using Diplom_1.Models;
-using Diplom_1.Services;
-using Diplom_1.Views;
+using FinancialAnalyst.Models;
+using FinancialAnalyst.Services;
+using FinancialAnalyst.Views;
 using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Painting;
 using SkiaSharp;
 
-namespace Diplom_1.ViewModels
+namespace FinancialAnalyst.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {

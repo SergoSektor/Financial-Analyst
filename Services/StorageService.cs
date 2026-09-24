@@ -4,11 +4,11 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
-using Diplom_1.Models;
+using FinancialAnalyst.Models;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 
-namespace Diplom_1.Services
+namespace FinancialAnalyst.Services
 {
     public class StorageService
     {
@@ -18,7 +18,7 @@ namespace Diplom_1.Services
         {
             var appData = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                "Diplom_1");
+                "FinancialAnalyst");
             if (!Directory.Exists(appData))
                 Directory.CreateDirectory(appData);
             _dbPath = Path.Combine(appData, "data.db");

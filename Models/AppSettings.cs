@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Text.Json;
 
-namespace Diplom_1.Models
+namespace FinancialAnalyst.Models
 {
     public enum AiMode
     {
@@ -22,7 +22,7 @@ namespace Diplom_1.Models
 
         private static readonly string SettingsPath = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-            "Diplom_1", "settings.json");
+            "FinancialAnalyst", "settings.json");
 
         public static AppSettings Load()
         {

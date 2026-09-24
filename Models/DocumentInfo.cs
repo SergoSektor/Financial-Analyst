@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Diplom_1.Models
+namespace FinancialAnalyst.Models
 {
     public enum DocumentStatus
     {

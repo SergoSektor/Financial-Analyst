@@ -4,9 +4,9 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Diplom_1.Models;
+using FinancialAnalyst.Models;
 
-namespace Diplom_1.Services
+namespace FinancialAnalyst.Services
 {
     public class EmbeddingService : IDisposable
     {

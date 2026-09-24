@@ -2,10 +2,10 @@ using System;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using Diplom_1.Models;
-using Diplom_1.Services;
+using FinancialAnalyst.Models;
+using FinancialAnalyst.Services;
 
-namespace Diplom_1.ViewModels
+namespace FinancialAnalyst.ViewModels
 {
     public class SettingsViewModel : ViewModelBase
     {

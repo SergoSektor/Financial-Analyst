@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Diplom_1
+namespace FinancialAnalyst
 {
     public partial class App : Application
     {

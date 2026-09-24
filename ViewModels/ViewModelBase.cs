@@ -1,7 +1,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Diplom_1.ViewModels
+namespace FinancialAnalyst.ViewModels
 {
     public class ViewModelBase : INotifyPropertyChanged
     {

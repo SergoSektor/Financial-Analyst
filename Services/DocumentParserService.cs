@@ -1,13 +1,13 @@
 using System.IO;
 using System.Text;
-using Diplom_1.Models;
+using FinancialAnalyst.Models;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Parser;
 using iText.Kernel.Pdf.Canvas.Parser.Listener;
 using Spire.Doc;
 using Spire.Doc.Documents;
 
-namespace Diplom_1.Services
+namespace FinancialAnalyst.Services
 {
     public class DocumentParserService
     {

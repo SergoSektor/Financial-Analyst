@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace Diplom_1.Models
+namespace FinancialAnalyst.Models
 {
     public class AppDbContext : DbContext
     {

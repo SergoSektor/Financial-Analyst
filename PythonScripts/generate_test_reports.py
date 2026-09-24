@@ -1,5 +1,5 @@
 """
-Script to generate realistic Word financial reports for testing the Diplom_1 app.
+Script to generate realistic Word financial reports for testing the FinancialAnalyst app.
 Generates .docx files with Russian financial data for major banks.
 """
 from docx import Document

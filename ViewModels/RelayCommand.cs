@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Input;
 
-namespace Diplom_1.ViewModels
+namespace FinancialAnalyst.ViewModels
 {
     public class RelayCommand : ICommand
     {

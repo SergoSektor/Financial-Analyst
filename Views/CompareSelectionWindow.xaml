@@ -1,4 +1,4 @@
-<Window x:Class="Diplom_1.Views.CompareSelectionWindow"
+<Window x:Class="FinancialAnalyst.Views.CompareSelectionWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Выбор документов для сравнения" Height="380" Width="500"

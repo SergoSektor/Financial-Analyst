@@ -3,9 +3,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using Diplom_1.ViewModels;
+using FinancialAnalyst.ViewModels;
 
-namespace Diplom_1
+namespace FinancialAnalyst
 {
     public partial class MainWindow : Window
     {

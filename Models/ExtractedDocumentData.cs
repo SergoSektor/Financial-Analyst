@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Diplom_1.Models
+namespace FinancialAnalyst.Models
 {
     public class ExtractedMetric
     {

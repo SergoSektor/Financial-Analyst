@@ -1,8 +1,8 @@
 using System.Windows;
-using Diplom_1.Models;
-using Diplom_1.ViewModels;
+using FinancialAnalyst.Models;
+using FinancialAnalyst.ViewModels;
 
-namespace Diplom_1.Views
+namespace FinancialAnalyst.Views
 {
     public partial class SettingsWindow : Window
     {

@@ -6,7 +6,7 @@
 import sqlite3, json, os
 from datetime import datetime
 
-APPDATA = os.path.join(os.environ['APPDATA'], 'Diplom_1')
+APPDATA = os.path.join(os.environ['APPDATA'], 'FinancialAnalyst')
 DB_PATH = os.path.join(APPDATA, 'data.db')
 os.makedirs(APPDATA, exist_ok=True)
 
