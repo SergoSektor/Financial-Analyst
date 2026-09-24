@@ -1,0 +1,26 @@
+# Build artifacts
+bin/
+obj/
+
+# IDE
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Diploma generation (private, personal)
+PythonScripts/diploma/
+PythonScripts/generate_diploma.py
+PythonScripts/generate_presentation.py
+
+# Test report binaries (regenerable via TestReports/generate_reports.py)
+**/TestReports/*.docx
+**/TestReports/*.pdf
+
+# Windows artifact
+nul
